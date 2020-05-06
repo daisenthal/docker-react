@@ -125,30 +125,10 @@ public class CmDetermineDetailedBalanceAlgComp_Impl
 
         List<Date> creditDates = getCreditDates(ftList);
         for (Date creditDate : creditDates) {
-            relieveCreditsWithILDByDebtCategoryAndAssessment(ftData, ftList, creditDate);
-            if (checkIfDone(ftList, creditDate)) {
-                continue;
+            for () {
             }
-            relieveCreditsWithILDByAssessment(ftData, ftList, creditDate);
-            if (checkIfDone(ftList, creditDate)) {
-                continue;
-            }
-            relieveCreditsWithILDByDebtCategory(ftData, ftList, creditDate);
-            if (checkIfDone(ftList, creditDate)) {
-                continue;
-            }
-            relieveCreditsWithILDByCreditAllocation(ftData, ftList, creditDate);
-            if (checkIfDone(ftList, creditDate)) {
-                continue;
-            }
-            relieveByDebtCategoryAndAssessment(ftData, ftList, creditDate);
-            if (checkIfDone(ftList, creditDate)) {
-                continue;
-            }
-            relieveByAssessment(ftData, ftList, creditDate);
-            if (checkIfDone(ftList, creditDate)) {
-                continue;
-            }
+         
+        
             relieveByDebtCategory(ftData, ftList, creditDate);
             if (checkIfDone(ftList, creditDate)) {
                 continue;
@@ -159,6 +139,8 @@ public class CmDetermineDetailedBalanceAlgComp_Impl
             }
             relieveRemaining(ftData, ftList, creditDate);
         }
+
+          
     }
 
     private List<Date> getCreditDates(List<CmPenaltyAndInterestFinancialData> ftList) {
